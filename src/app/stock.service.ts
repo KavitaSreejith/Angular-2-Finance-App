@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class StockService{
-     constructor (private http: HTTP){}
+     constructor (private http: Http){}
 
      getStocksApi(): Observable<any>{
          return this.http.get("http://localhost:3000/stocks")
