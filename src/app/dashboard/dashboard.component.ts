@@ -7,7 +7,7 @@ import {StockService} from '../stock.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  stocks : string[];
   ngOnInit() {
     this.getAllStocks();
   }
@@ -17,11 +17,16 @@ export class DashboardComponent implements OnInit {
    }
 
 getAllStocks(){
-  this.stockService.getStocksApi()
+  this.stockService.getStocksApi() 
   .subscribe(
-    data => console.log(JSON.stringify(data)),
+    data => this.stocks = data,
     error => console.log('Server Error')
   );
-
 }
+
+createStock(newStockCode : string, newName :string){
+this.stockService.createStock(newStockCode,newName).subscribe();
+location.reload();
+}
+//createStock(newStockCode.value, newName.value)
 }

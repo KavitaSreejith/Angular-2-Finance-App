@@ -13,7 +13,9 @@ import {routing} from  './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BondsDirective } from './bonds.directive';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {enableProdMode} from '@angular/core';
 
+enableProdMode();
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,4 +31,5 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   providers: [StockService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
